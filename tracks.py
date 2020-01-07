@@ -34,7 +34,7 @@ for track in tracks:
     if track.sampleRate() > 48000 or track.bitRate() > 1500:
 #    if track.bpm() == 24 or track.sampleRate() > 48000:
         print(track.album()+": "+track.artist()+" - "+track.name())
-        file = urllib.parse.quote(track.get().location().path())
+        file = urllib.parse.quote(track.location().path())
         url = MCWS + "/Library/Import?Block=1&Token="+token+"&Path="+file
         try:
             resp = urllib.request.urlopen(url)
